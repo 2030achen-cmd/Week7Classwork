@@ -7,3 +7,28 @@ package Source;
 // 4. Reject invalid heights without changing the current position.
 //
 // Start by replacing this comment with your class declaration.
+
+public class Elevator extends Mechanism implements Loggable{
+
+    public Elevator(){
+        super("Elevator");
+    }
+
+    @Override 
+    public void setPosition(double position){
+        if(position >= 0 && position <=2.0){
+            this.position = position;
+        }
+        else{
+            System.out.println("Enter a height between 0 and 2");
+        }
+    }
+
+    @Override 
+    public void printStatus(){
+        System.out.println("WOOOO");
+    }
+
+
+
+}

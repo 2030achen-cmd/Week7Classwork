@@ -10,7 +10,7 @@ public class RobotSim {
         Arm arm = new Arm();
 
         // IN CLASS: After writing Elevator.java, replace null with new Elevator().
-        Mechanism elevator = null;
+        Elevator elevator = new Elevator();
 
         BatteryMonitor battery = new BatteryMonitor(12.6);
 
@@ -53,6 +53,14 @@ public class RobotSim {
                         arm.setPosition(Double.parseDouble(parts[1]));
                         System.out.println("Arm position: " + arm.getPosition() + " degrees");
                         break;
+                    //case "climber":
+                    //  if (parts.length != 2) {
+                    //        System.out.println("Usage: climber <climberInMeters>");
+                    //        break;
+                    //    }
+                    //    climber.setPosition(Double.parseDouble(parts[1]));
+                    //   System.out.println("Climber position: " + climber.getPosition() + " meters");
+                    //   break;
                     case "elevator":
                         if (parts.length != 2) {
                             System.out.println("Usage: elevator <heightInMeters>");

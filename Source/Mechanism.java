@@ -1,9 +1,9 @@
 package Source;
 // IN CLASS: Start with this ordinary parent class.
 // Later, we will discuss whether Mechanism should be abstract.
-public class Mechanism {
+public abstract class Mechanism {
     private String name;
-    private double position;
+    protected double position;
 
     public Mechanism(String name) {
         this.name = name;
@@ -14,7 +14,15 @@ public class Mechanism {
     public double getPosition() { return position; }
 
     // Child classes can reuse this method using super.setPosition(...).
-    public void setPosition(double position) {
+    public abstract void setPosition(double position);
+
+    protected void updatePosition(double position){
         this.position = position;
     }
+
+	public void extend() {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'extend'");
+	}
+    
 }
