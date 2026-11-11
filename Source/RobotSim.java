@@ -8,6 +8,7 @@ public class RobotSim {
         Drivetrain drivetrain = new Drivetrain();
         Intake intake = new Intake();
         Arm arm = new Arm();
+        Climber climber = new Climber();
 
         // IN CLASS: After writing Elevator.java, replace null with new Elevator().
         Elevator elevator = new Elevator();
@@ -17,7 +18,7 @@ public class RobotSim {
         // IN CLASS: Try creating a generic Mechanism here. Later, when
         // Mechanism becomes abstract, that line should no longer compile.
         // Mechanism generic = new Mechanism("Generic Mechanism");
-
+       
         Scanner scanner = new Scanner(System.in);
         printHelp();
 
@@ -53,14 +54,14 @@ public class RobotSim {
                         arm.setPosition(Double.parseDouble(parts[1]));
                         System.out.println("Arm position: " + arm.getPosition() + " degrees");
                         break;
-                    //case "climber":
-                    //  if (parts.length != 2) {
-                    //        System.out.println("Usage: climber <climberInMeters>");
-                    //        break;
-                    //    }
-                    //    climber.setPosition(Double.parseDouble(parts[1]));
-                    //   System.out.println("Climber position: " + climber.getPosition() + " meters");
-                    //   break;
+                    case "climber":
+                      if (parts.length != 2) {
+                            System.out.println("Usage: climber <climberInDegrees>");
+                            break;
+                        }
+                        climber.setPosition(Double.parseDouble(parts[1]));
+                        System.out.println("Climber position: " + climber.getPosition() + " degrees");
+                       break;
                     case "elevator":
                         if (parts.length != 2) {
                             System.out.println("Usage: elevator <heightInMeters>");
@@ -84,6 +85,10 @@ public class RobotSim {
                         break;
                     case "status":
                         drivetrain.printStatus();
+                        Loggable[] devices = {arm, elevator, battery};
+                        for(Loggable device: devices){
+                            device.printStatus();
+                        }
                         System.out.println("Arm position: " + arm.getPosition() + " degrees");
                         if (elevator != null) {
                             System.out.println("Elevator position: " + elevator.getPosition() + " meters");

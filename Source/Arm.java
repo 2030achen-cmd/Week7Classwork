@@ -1,6 +1,6 @@
 package Source;
 // GUIDED IN CLASS: Use this starter to demonstrate extends, super, and @Override.
-public class Arm extends Mechanism {
+public class Arm extends Mechanism implements Loggable {
     public Arm() {
         super("Arm");
     }
@@ -13,6 +13,13 @@ public class Arm extends Mechanism {
         }else{
             System.out.println("Enter an angle between 0 and 180");
         }
+        updatePosition(position);
+
+    }
+    
+    @Override
+    public void printStatus(){
+        System.out.println(position);
     }
 
     // TODO (together): Override setPosition(double position).

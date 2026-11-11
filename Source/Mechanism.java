@@ -20,9 +20,4 @@ public abstract class Mechanism {
         this.position = position;
     }
 
-	public void extend() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'extend'");
-	}
-    
 }

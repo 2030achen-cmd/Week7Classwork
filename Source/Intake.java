@@ -1,5 +1,5 @@
 package Source;
-public class Intake {
+public class Intake implements Loggable{
     private Motor motor;
 
     public Intake() { motor = new Motor("Intake"); }
@@ -7,4 +7,5 @@ public class Intake {
     public void intake() { motor.setSpeed(50); }
     public void outtake() { motor.setSpeed(-50); }
     public void stop() { motor.stop(); }
-    public void printStatus() { motor
+    public void printStatus() { motor.stop(); }
+}

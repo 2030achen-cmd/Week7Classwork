@@ -1,28 +1,32 @@
 package Source;
 
-public class Climber extends Mechanism{
-    private static double maxExtension=90;
-    private static double minExtension=0;
-
-    //adding a comment here 
-    public Climber() {
+public class Climber extends Mechanism implements Loggable{
+    
+    public Climber(){
         super("Climber");
     }
 
-    @Override    
+    @Override
     public void setPosition(double position){
-        if(position<=90 && position>=0){
+        if(position<=180 && position>=0){
             this.position=position;
         }else{
-            System.out.println("Enter an extension between 0 and 90");
+            System.out.println("You should enter an angle between 0 and 180. ");
         }
+        updatePosition(position);
     }
     
     public void extend(){
-        setPosition(Climber.maxExtension);
+        this.position=180;
     }
-    public void restract(){
-        setPosition(Climber.minExtension);
+
+    public void retract(){
+        this.position=0;
+    }
+    
+    @Override
+    public void printStatus(){
+        updatePosition(position);
     }
 
 

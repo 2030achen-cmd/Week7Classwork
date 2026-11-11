@@ -22,6 +22,7 @@ public class Elevator extends Mechanism implements Loggable{
         else{
             System.out.println("Enter a height between 0 and 2");
         }
+        updatePosition(position);
     }
 
     @Override 
